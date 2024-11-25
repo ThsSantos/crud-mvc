@@ -3,6 +3,5 @@ import { AlunoController } from '../controllers/Aluno.Controller.mjs';
 
 export const alunosRoutes = express.Router();
 
-alunosRoutes.get('/', AlunoController.home);
 alunosRoutes.get('/lista', AlunoController.lista_alunos);
 
