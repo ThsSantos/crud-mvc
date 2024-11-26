@@ -1,1 +1,28 @@
-<h1>lista cursos</h1>
+<div class="row d-flex justify-content-center mt-3">
+    <div class="col-3 text-center">
+        <h5>Lista de Cursos</h5>
+ 
+    </div>
+</div>
+<div class="row mt-2">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each cursos}}
+                <tr>
+                <td>{{this.id}}</td>
+                <td>{{this.nome}}</td>
+                <td>{{this.descricao}}</td>
+                <td>ALTERAR</td>
+                <td>EXCLUIR</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
