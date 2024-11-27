@@ -6,3 +6,4 @@ export const turmaRoutes = express.Router();
 
 turmaRoutes.get('/lista', TurmaController.lista_turmas);
 turmaRoutes.get('/form_turmas', TurmaController.form_turma);
+turmaRoutes.post('/cadastro_turma', TurmaController.cadastro_turma);

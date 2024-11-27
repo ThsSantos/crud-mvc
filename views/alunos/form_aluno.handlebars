@@ -1,50 +1,61 @@
 
 <div class="row d-flex justify-content-center mt-3">
     <div class="col text-center">
-        <h5>Formulario Cadastro de Turma</h5>
-        {{#if status}}
-          <p>Turma já cadastrada</p>
-        {{/if}}
+        <h5>Formulario Cadastro de Aluno</h5>
     </div>
 </div>
 <div class="row aling-items-center mt-3">
-<form action="/turmas/cadastro_turma" method="post">
-  <div class="row d-flex justify-content-center">
-  </div>
+<form action="/cursos/curso_cadastro" method="post">
   <div class="row d-flex justify-content-center">
     <div class="col-6">
         <div class="mb-3">
-    <label>Quantidade maxima de alunos</label>
-    <input type="number" class="form-control" name="qtd" required>
+    <label class="form-label">Nome</label>
+    <input type="text" class="form-control" name="nome" required>
   </div>
     </div>
   </div>
   <div class="row d-flex justify-content-center">
     <div class="col-6">
         <div class="mb-3">
-    <label>Data de Inicio</label>
-    <input type="date" class="form-control" name="dataInicio" required>
+    <label>Sobrenome</label>
+    <input type="text" class="form-control" name="sobrenome" required>
   </div>
     </div>
   </div>
   <div class="row d-flex justify-content-center">
     <div class="col-6">
         <div class="mb-3">
-    <label>Data de Conclusão</label>
-    <input type="date" class="form-control" name="dataFim" required>
+    <label>Idade</label>
+    <input type="text" class="form-control" name="idade" required>
   </div>
     </div>
   </div>
-   <div class="row d-flex justify-content-center">
+  <div class="row d-flex justify-content-center">
+    <div class="col-6">
+        <div class="mb-3">
+    <label>Celular</label>
+    <input type="text" class="form-control" name="celular" required>
+  </div>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-6">
+        <div class="mb-3">
+    <label>Email</label>
+    <input type="text" class="form-control" name="email" required>
+  </div>
+    </div>
+  </div>
+     <div class="row d-flex justify-content-center">
     <div class="col-6">
         <div class="mb-3">
     <label>Curso</label>
 
       <select class="form-select" name="curso">
     {{!-- <option selected>Open this select menu</option> --}}
-    {{#each cursos}}
-    <option value="{{this.id}}">{{this.nome}}</option>
-    {{/each}}
+    
+    <option value="">teste</option>
+    
   </select>
 
   </div>

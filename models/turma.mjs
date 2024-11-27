@@ -8,11 +8,11 @@ export const Turma = conn.define('Turma', {
         required: true
     },
     dataInicio: {
-        type: DataTypes.DATE,
+        type: DataTypes.DATEONLY,
         required: true
     },
     dataFim:{
-        type: DataTypes.DATE,
+        type: DataTypes.DATEONLY,
         required: true
     },
 })
