@@ -14,6 +14,8 @@
             </tr>
         </thead>
         <tbody>
+            {{#if status}}
+
             {{#each cursos}}
                 <tr>
                 <td>{{this.id}}</td>
@@ -23,6 +25,14 @@
                 <td>EXCLUIR</td>
             </tr>
             {{/each}}
+
+            {{else }}
+
+            <tr>
+                <td class="text-center">Não há cursos cadastrados</td>
+            </tr>
+
+        {{/if}}
         </tbody>
     </table>
 </div>

@@ -5,6 +5,7 @@ import { turmaRoutes } from './routes/turmas.Routes.mjs';
 import { cursoRoutes } from './routes/cursos.Routes.mjs';
 import { conn } from './db/conn.mjs';
 import { Curso } from './models/curso.mjs';
+import { Turma } from './models/turma.mjs';
 
 const app = express();
 

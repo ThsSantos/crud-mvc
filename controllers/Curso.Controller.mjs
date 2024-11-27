@@ -5,8 +5,15 @@ export class CursoController{
     static async lista_curso(req,res){
 
         const cursos = await Curso.findAll({raw:true});
+        let status;
+        console.log(cursos.length);
+        if(cursos.length==0){
+            status = false
+        }else{
+           status = true;
+        }
 
-        res.render('cursos/lista_cursos', {cursos});
+        res.render('cursos/lista_cursos', {cursos, status});
     }
 
     static form_curso(req,res){
