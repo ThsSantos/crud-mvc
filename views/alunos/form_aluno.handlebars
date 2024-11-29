@@ -5,7 +5,7 @@
     </div>
 </div>
 <div class="row aling-items-center mt-3">
-<form action="/cursos/curso_cadastro" method="post">
+<form action="/alunos/cadastroAluno" method="post">
   <div class="row d-flex justify-content-center">
     <div class="col-6">
         <div class="mb-3">
@@ -25,8 +25,16 @@
   <div class="row d-flex justify-content-center">
     <div class="col-6">
         <div class="mb-3">
-    <label>Idade</label>
-    <input type="text" class="form-control" name="idade" required>
+    <label>CPF</label>
+    <input type="text" class="form-control" name="cpf" required>
+  </div>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-6">
+        <div class="mb-3">
+    <label>Data de nascimento</label>
+    <input type="date" class="form-control" name="dataNas" required>
   </div>
     </div>
   </div>
@@ -53,9 +61,9 @@
 
       <select class="form-select" name="curso">
     {{!-- <option selected>Open this select menu</option> --}}
-    
-    <option value="">teste</option>
-    
+    {{#each turma}}
+    <option value="{{id}}">{{[Curso.nome]}} - {{formatDate dataInicio}}</option>
+    {{/each}}
   </select>
 
   </div>

@@ -12,8 +12,12 @@ export const Aluno = conn.define('Aluno', {
         type: DataTypes.STRING,
         required: true,
     },
+    cpf:{
+        type:DataTypes.STRING,
+        required: true,
+    },
 
-    idade:{
+    dataNas:{
         type: DataTypes.DATEONLY,
         required: true,
     },

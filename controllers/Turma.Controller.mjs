@@ -1,11 +1,20 @@
 import { Curso } from '../models/curso.mjs';
 import { Turma } from '../models/turma.mjs';
+import { Aluno } from '../models/aluno.mjs';
 
 export class TurmaController{
     static async lista_turmas(req,res){
-       
+       let quantidade = await [];
         const turmas = await Turma.findAll({ raw: true, include:{ model: Curso, attributes: ['nome'], required: true}});
 
+    //   turmas.forEach(async element => {
+    //         console.log(element.id);
+    //         const count = await Aluno.count({where: {TurmaId:element.id}})
+    //         console.log(count);
+    //         quantidade.push(count);
+    //     });
+
+        
         res.render('turmas/lista_turmas', {turmas});
     }
 
