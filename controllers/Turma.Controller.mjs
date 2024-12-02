@@ -1,18 +1,36 @@
 import { Curso } from '../models/curso.mjs';
 import { Turma } from '../models/turma.mjs';
 import { Aluno } from '../models/aluno.mjs';
+import { fn,col } from 'sequelize';
+
 
 export class TurmaController{
     static async lista_turmas(req,res){
-       let quantidade = await [];
-        const turmas = await Turma.findAll({ raw: true, include:{ model: Curso, attributes: ['nome'], required: true}});
+    
+        const turmas = await Turma.findAll({
+           attributes: [
+            'id',
+            'qtd_max',
+            'dataInicio',
+            'dataFim',
+            [fn('COUNT', col('alunos.Turmaid')), 'qtdAluno']
+           ],
+           include: [
+            {
+                model: Curso,
+                attributes: ['nome'],
+                required: true
+            },
+            {
+                model: Aluno,
+                attributes: []
+            }
+           ],
+           group: [col('id'), col('qtd_max'),col('dataInicio'),col('dataFim')],
+           raw:true
+        });
 
-    //   turmas.forEach(async element => {
-    //         console.log(element.id);
-    //         const count = await Aluno.count({where: {TurmaId:element.id}})
-    //         console.log(count);
-    //         quantidade.push(count);
-    //     });
+        console.log(turmas);
 
         
         res.render('turmas/lista_turmas', {turmas});
