@@ -30,7 +30,7 @@ export class TurmaController{
            raw:true
         });
 
-        console.log(turmas);
+        // console.log(turmas);
 
         
         res.render('turmas/lista_turmas', {turmas});
@@ -72,6 +72,18 @@ export class TurmaController{
         }
 
         
+
+    }
+
+    static async lista_turmaAlunos(req,res){
+        const id = req.params.id;
+
+        // console.log(id);
+        const turma = await Turma.findOne({raw: true, include:{ model: Curso, attributes: ['nome'], required:true}, where:{id:id}});
+        const alunos = await Aluno.findAll({raw: true, where:{TurmaId:id}, order:[['nome', 'ASC']]});
+        console.log(turma);
+
+        res.render('turmas/turma_alunos', {alunos, turma});
 
     }
 }

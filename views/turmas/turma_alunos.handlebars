@@ -1,0 +1,31 @@
+<div class="row d-flex justify-content-end mt-3">
+    <div class="col-3">
+        <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Buscar RA" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Buscar</button>
+    </form>
+    </div>
+</div>
+<div class="row mt-2">
+    <h1 class="text-center">Lista turma {{turma.[Curso.nome]}} - {{formatDate turma.dataInicio}}</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>RA</th>
+                <th>Nome</th>
+                <th>sobrenome</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each alunos}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{nome}}</td>
+                <td>{{sobrenome}}</td>
+                <td>DETALHES</td>
+                
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

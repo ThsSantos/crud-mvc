@@ -10,23 +10,24 @@
     <table class="table">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Data de inicio</th>
-                <th>Data de conclusão</th>
-                <th>Curso</th>
-                <th>Qunatidade de Alunos</th>
+                <th class="text-center">ID</th>
+                <th class="text-center">Data de inicio</th>
+                <th class="text-center">Data de conclusão</th>
+                <th class="text-center">Curso</th>
+                <th class="text-center">Quantidade de Alunos</th>
             </tr>
         </thead>
         <tbody>
             {{#each turmas}}
             <tr>
-                <td>{{this.id}}</td>
-                <td>{{this.dataInicio}}</td>
-                <td>{{this.dataFim}}</td>
-                <td>{{this.[Curso.nome]}}</td>
-                <td>{{this.qtdAluno}} | {{this.qtd_max}}</td>
-                <td>ALTERAR</td>
-                <td>EXCLUIR</td>
+                <td class="text-center">{{this.id}}</td>
+                <td class="text-center">{{this.dataInicio}}</td>
+                <td class="text-center">{{this.dataFim}}</td>
+                <td class="text-center">{{this.[Curso.nome]}}</td>
+                <td class="text-center">{{this.qtdAluno}} | {{this.qtd_max}}</td>
+                <td class="text-center"><a href="/turmas/turma_alunos/{{this.id}}">Mostrar Turma</a></td>
+                <td class="text-center">ALTERAR</td>
+                <td class="text-center">EXCLUIR</td>
             </tr>
             {{/each}}
             
