@@ -86,4 +86,36 @@ export class TurmaController{
         res.render('turmas/turma_alunos', {alunos, turma});
 
     }
+
+    static async FormUpdate_turma(req,res){
+        const id = req.params.id;
+
+        const turma = await Turma.findOne({raw: true, include:{ model: Curso, attributes: ['id','nome'], required:true}, where:{id:id}});
+        const cursos = await Curso.findAll({raw:true});
+
+        console.log(turma);
+
+        res.render('turmas/formUpdate_turma', {turma, cursos});
+    }
+
+    static async update_turma(req,res){
+        const id = parseInt(req.body.id);
+        const qtd = parseInt(req.body.qtd);
+        const dataInicio = req.body.dataInicio;
+        const dataFim = req.body.dataFim;
+        const curso = parseInt(req.body.curso);
+
+        const turma = {
+            id: id,
+            qtd_max: qtd,
+            dataInicio: dataInicio,
+            dataFim: dataFim,
+            CursoId: curso,
+            
+        }
+
+        await Turma.update(turma,{where:{id:id}});
+
+        res.redirect('/turmas/lista');
+    }
 }

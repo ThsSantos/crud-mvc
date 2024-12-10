@@ -1,0 +1,54 @@
+
+<div class="row d-flex justify-content-center mt-3">
+    <div class="col text-center">
+        <h5>Formulario Atualização de Turma</h5>
+</div>
+<div class="row aling-items-center mt-3">
+<form action="/turmas/update_turma" method="post">
+<input type="text" name="id" value="{{turma.id}}" hidden>
+  <div class="row d-flex justify-content-center">
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-6">
+        <div class="mb-3">
+    <label>Quantidade maxima de alunos</label>
+    <input type="number" class="form-control" name="qtd" value="{{turma.qtd_max}}" required>
+  </div>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-6">
+        <div class="mb-3">
+    <label>Data de Inicio</label>
+    <input type="date" class="form-control" name="dataInicio" value="{{turma.dataInicio}}" required>
+  </div>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-6">
+        <div class="mb-3">
+    <label>Data de Conclusão</label>
+    <input type="date" class="form-control" name="dataFim" value="{{turma.dataFim}}" required>
+  </div>
+    </div>
+  </div>
+   <div class="row d-flex justify-content-center">
+    <div class="col-6">
+        <div class="mb-3">
+    <label>Curso</label>
+<input type="text" class="form-control" name="cursoNome" value="{{turma.[Curso.nome]}}" disabled>
+<input type="text" class="form-control" name="curso" value="{{turma.[Curso.id]}}" hidden>
+
+
+  </div>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-6">
+        <div class="mb-3">
+    <input type="submit" class="btn btn-primary" value="Cadastrar">
+  </div>
+    </div>
+  </div>
+</form>
+</div>
