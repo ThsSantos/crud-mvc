@@ -1,8 +1,14 @@
 <div class="row d-flex justify-content-end mt-3">
-    <div class="col-3">
+    <div class="col-6">
         <form class="d-flex" role="search">
-      <input class="form-control me-2" type="search" placeholder="Buscar RA" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Buscar</button>
+      <input class="form-control me-2" type="search" placeholder="Buscar Por..." aria-label="Search">
+      <div class="input-group">
+  <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+    <option value="1">Nome</option>
+    <option value="2">RA</option>
+  </select>
+  <input type="submit" class="btn btn-outline-secondary" value="Buscar">
+</div>
     </form>
     </div>
 </div>
@@ -12,8 +18,8 @@
             <tr>
                 <th>RA</th>
                 <th>Nome</th>
-                <th>sobrenome</th>
-                <th>Turma</th>
+                <th>Sobrenome</th>
+                <th>Curso</th>
             </tr>
         </thead>
         <tbody>

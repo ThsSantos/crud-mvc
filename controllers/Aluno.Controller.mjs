@@ -1,11 +1,31 @@
 import { Aluno } from '../models/aluno.mjs';
 import { Turma } from '../models/turma.mjs';
 import { Curso } from '../models/curso.mjs';
+import { col } from 'sequelize';
 
 export class AlunoController {
 
 
-    static lista_alunos(req,res){
+    static async lista_alunos(req,res){
+        const alunos = await Aluno.findAll({attributes: [
+            'id',
+            'nome',
+            'sobrenome'
+        ],
+    include: [
+        {
+            model: Turma,
+            attributes:[],
+        },
+        {
+            model: Curso,
+            attributes: ['nome']
+        }
+    ],
+    group: [col('id'),col('nome'),col('sobrenome')],
+    raw: true
+});
+    console.log(alunos);
         res.render('alunos/lista_alunos');
     }
 
