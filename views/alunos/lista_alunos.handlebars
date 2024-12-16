@@ -23,42 +23,15 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>THIAGO</td>
-                <td>SANTOS</td>
-                <td>1A</td>
-                <td>DETALHES</td>
-                <td>ALTERAR</td>
-                <td>EXCLUIR</td>
+     {{#each alunos}}
+ <tr>
+                <td>{{this.id}}</td>
+                <td>{{this.nome}}</td>
+                <td>{{this.sobrenome}}</td>
+                <td>{{this.Curso}}</td>
+                <td><a href="/alunos/detalhes/{{this.id}}">Detalhes</a></td>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>THIAGO</td>
-                <td>SANTOS</td>
-                <td>1A</td>
-                <td>DETALHES</td>
-                <td>ALTERAR</td>
-                <td>EXCLUIR</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>THIAGO</td>
-                <td>SANTOS</td>
-                <td>1A</td>
-                <td>DETALHES</td>
-                <td>ALTERAR</td>
-                <td>EXCLUIR</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>THIAGO</td>
-                <td>SANTOS</td>
-                <td>1A</td>
-                <td>DETALHES</td>
-                <td>ALTERAR</td>
-                <td>EXCLUIR</td>
-            </tr>
+     {{/each}}
         </tbody>
     </table>
 </div>

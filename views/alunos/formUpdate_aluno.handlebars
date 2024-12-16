@@ -1,0 +1,83 @@
+
+<div class="row d-flex justify-content-center mt-3">
+    <div class="col text-center">
+        <h5>Formulario Atualização de Aluno</h5>
+    </div>
+</div>
+<div class="row aling-items-center mt-3">
+<form action="/alunos/alunoUpdate" method="post">
+<input type="hidden" name="id" value="{{aluno.id}}">
+  <div class="row d-flex justify-content-center">
+    <div class="col-6">
+        <div class="mb-3">
+    <label class="form-label">Nome</label>
+    <input type="text" class="form-control" name="nome" value="{{aluno.nome}}" required>
+  </div>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-6">
+        <div class="mb-3">
+    <label>Sobrenome</label>
+    <input type="text" class="form-control" name="sobrenome" value="{{aluno.sobrenome}}" required>
+  </div>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-6">
+        <div class="mb-3">
+    <label>CPF</label>
+    <input type="text" class="form-control" name="cpf" value="{{aluno.cpf}}" required>
+  </div>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-6">
+        <div class="mb-3">
+    <label>Data de nascimento</label>
+    <input type="date" class="form-control" name="dataNas" value="{{aluno.dataNas}}" required>
+  </div>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-6">
+        <div class="mb-3">
+    <label>Celular</label>
+    <input type="text" class="form-control" name="celular" value="{{aluno.celular}}" required>
+  </div>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-6">
+        <div class="mb-3">
+    <label>Email</label>
+    <input type="text" class="form-control" name="email" value="{{aluno.email}}" required>
+  </div>
+    </div>
+  </div>
+     <div class="row d-flex justify-content-center">
+    <div class="col-6">
+        <div class="mb-3">
+    <label>Curso</label>
+
+      <select class="form-select" name="curso">
+    {{!-- <option selected>Open this select menu</option> --}}
+
+    <option selected value="{{aluno.TurmaId}}">Seu curso: {{aluno.curso}}</option>
+    {{#each filterTurma}}
+    <option value="{{id}}">{{[Curso.nome]}} - {{formatDate dataInicio}}</option>
+    {{/each}}
+  </select>
+
+  </div>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-6">
+        <div class="mb-3">
+    <input type="submit" class="btn btn-primary" value="Cadastrar">
+  </div>
+    </div>
+  </div>
+</form>
+</div>

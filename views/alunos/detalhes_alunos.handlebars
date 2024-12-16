@@ -1,0 +1,29 @@
+
+<div class="row mt-2">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>RA</th>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Curso</th>
+                <th>Data de nascimento</th>
+                <th>E-MAIL</th>
+                <th>Celular</th>
+            </tr>
+        </thead>
+        <tbody>
+ <tr>
+                <td>{{aluno.id}}</td>
+                <td>{{aluno.nome}}</td>
+                <td>{{aluno.sobrenome}}</td>
+                <td>{{aluno.Curso}}</td>
+                <td>{{aluno.dataNas}}</td>
+                <td>{{aluno.email}}</td>
+                <td>{{aluno.celular}}</td>
+                <td><a href="/alunos/formUpdate/{{aluno.id}}">alterar</a></td>
+                <td>deletar</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
