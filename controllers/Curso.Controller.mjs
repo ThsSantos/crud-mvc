@@ -45,4 +45,29 @@ export class CursoController{
         
     }
 
+    static async formAltera_curso(req,res){
+        const id = req.params.id;
+        // console.log(id);
+        const curso = await Curso.findOne({raw: true, where:{id:id}});
+
+        // console.log(curso)
+
+        res.render('cursos/formAltera_curso', {curso});
+    }
+
+    static async update_curso(req,res){
+        const id = req.body.id;
+        const nome = req.body.nome;
+        const descricao = req.body.descricao;
+
+        const curso = {
+            nome: nome,
+            descricao: descricao,
+        }
+
+        Curso.update(curso,{where:{id:id}});
+
+        res.redirect('/cursos/lista');
+    }
+
 }

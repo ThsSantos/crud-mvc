@@ -124,4 +124,12 @@ export class AlunoController {
 
         res.redirect(`/alunos/detalhes/${id}`);
     }
+
+    static async remove_aluno(req,res){
+
+        const id = req.params.id;
+
+        await Aluno.destroy({where:{id:id}});
+        res.redirect('/alunos/lista');
+    }
 }

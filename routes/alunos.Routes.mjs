@@ -9,4 +9,5 @@ alunosRoutes.post('/cadastroAluno', AlunoController.cadastro_aluno);
 alunosRoutes.get('/detalhes/:id', AlunoController.detalhes_aluno);
 alunosRoutes.get('/formUpdate/:id', AlunoController.formUpdate_aluno);
 alunosRoutes.post('/alunoUpdate', AlunoController.update_aluno);
+alunosRoutes.get('/deleteAluno/:id', AlunoController.remove_aluno);
 

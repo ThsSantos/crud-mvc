@@ -28,9 +28,16 @@ export const Aluno = conn.define('Aluno', {
     email:{
         type: DataTypes.STRING,
         required: true,
+    },
+    TurmaId:{
+        type: DataTypes.INTEGER,
+        allowNull: true,
     }
 })
 
 
-Turma.hasMany(Aluno);
+Turma.hasMany(Aluno, {
+    foreignKey: 'TurmaId',
+    onDelete: 'SET NULL',
+});
 Aluno.belongsTo(Turma);

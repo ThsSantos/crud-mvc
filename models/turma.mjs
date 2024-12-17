@@ -17,5 +17,7 @@ export const Turma = conn.define('Turma', {
     },
 })
 
-Curso.hasMany(Turma);
+Curso.hasMany(Turma,{
+    onDelete: 'CASCADE',
+});
 Turma.belongsTo(Curso);
