@@ -1,0 +1,11 @@
+<div class="mt-3 card text-center">
+  <div class="card-header">
+    Aviso de Exclusão
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Tem certeza que deseja excluir a turma de <b>{{lookup turma 'Curso.nome'}} - {{formatDate turma.dataInicio}}</b></h5>
+    <p class="card-text">Todas os alunos deixaram a turma</p>
+    <a href="/turmas/delete/{{turma.id}}" class="btn btn-primary">Sim</a>
+    <a href="/turmas/lista" class="btn btn-primary">Não</a>
+  </div>
+</div>

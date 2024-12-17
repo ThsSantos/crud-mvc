@@ -118,4 +118,25 @@ export class TurmaController{
 
         res.redirect('/turmas/lista');
     }
+
+    static async turma_warn(req,res){
+
+        const id = req.params.id;
+
+        const turma = await Turma.findOne({raw: true, include:{ model: Curso, attributes: ['nome'], required:true}, where:{id:id}});
+
+        console.log(turma);
+
+        res.render('turmas/turma_warn', {turma});
+    }
+
+    static async delete_turma(req,res){
+
+        const id = req.params.id;
+
+        Turma.destroy({where:{id:id}});
+
+        res.redirect('/turmas/lista');
+
+    }
 }

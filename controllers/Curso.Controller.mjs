@@ -70,4 +70,23 @@ export class CursoController{
         res.redirect('/cursos/lista');
     }
 
+    static async delete_warn(req,res){
+        const id = req.params.id;
+
+        const curso = await Curso.findOne({raw: true, where:{id:id}});
+
+        // console.log(curso);
+
+        res.render('cursos/curso_warn', {curso});
+
+    }
+
+    static async delete(req,res){
+        const id = req.params.id;
+
+        await Curso.destroy({where:{id:id}});
+
+        res.redirect("/cursos/lista");
+    }
+
 }
