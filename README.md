@@ -1,4 +1,3 @@
-```markdown
 # 📚 Sistema de Gerenciamento de Escola
 
 ## 🏫 Visão Geral
@@ -22,7 +21,7 @@ Este projeto foi aplicado no componente **Interface Web II**, com a orientação
 
 ### 📦 Dependências
 
-```json
+
 "dependencies": {
   "express": "^4.21.1",
   "express-handlebars": "^8.0.1",
@@ -32,7 +31,7 @@ Este projeto foi aplicado no componente **Interface Web II**, com a orientação
 "devDependencies": {
   "nodemon": "^3.1.7"
 }
-```
+
 
 ---
 
