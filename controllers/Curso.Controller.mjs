@@ -34,7 +34,7 @@ export class CursoController{
             }
             await Curso.create(curso);
 
-            res.redirect('/cursos/form_cadastro');
+            res.redirect('/cursos/lista');
         }else{
             const erro = 1;
             res.render('cursos/form_curso', {erro});
