@@ -28,6 +28,7 @@ Este projeto foi aplicado no componente **Interface Web II**, com a orientação
   "mysql2": "^3.11.4",
   "sequelize": "^6.37.5"
 },
+
 "devDependencies": {
   "nodemon": "^3.1.7"
 }
@@ -83,9 +84,4 @@ O projeto utiliza **Bootstrap** para garantir uma interface simples e responsiva
 
 ---
 
-## 🤝 Colaboradores
-
-Este projeto foi desenvolvido com o auxilio **Professor Marcelo Macrino** durante o componente **Interface Web II**.
-
----
 
