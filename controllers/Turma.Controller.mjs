@@ -30,7 +30,6 @@ export class TurmaController{
            raw:true
         });
 
-        // console.log(turmas);
 
         
         res.render('turmas/lista_turmas', {turmas});
@@ -52,7 +51,6 @@ export class TurmaController{
 
         const num_row = await Turma.findAll({raw: true, where:{ dataInicio:dataInicio, CursoId:curso } });
         const cursos = await Curso.findAll({raw:true});
-        // console.log(num_row.length);
 
         if(num_row.length==0){
             const turma = {
@@ -78,10 +76,8 @@ export class TurmaController{
     static async lista_turmaAlunos(req,res){
         const id = req.params.id;
 
-        // console.log(id);
         const turma = await Turma.findOne({raw: true, include:{ model: Curso, attributes: ['nome'], required:true}, where:{id:id}});
         const alunos = await Aluno.findAll({raw: true, where:{TurmaId:id}, order:[['nome', 'ASC']]});
-        console.log(turma);
 
         res.render('turmas/turma_alunos', {alunos, turma});
 
@@ -93,7 +89,6 @@ export class TurmaController{
         const turma = await Turma.findOne({raw: true, include:{ model: Curso, attributes: ['id','nome'], required:true}, where:{id:id}});
         const cursos = await Curso.findAll({raw:true});
 
-        console.log(turma);
 
         res.render('turmas/formUpdate_turma', {turma, cursos});
     }
@@ -125,7 +120,6 @@ export class TurmaController{
 
         const turma = await Turma.findOne({raw: true, include:{ model: Curso, attributes: ['nome'], required:true}, where:{id:id}});
 
-        console.log(turma);
 
         res.render('turmas/turma_warn', {turma});
     }

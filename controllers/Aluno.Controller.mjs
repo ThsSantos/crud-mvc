@@ -38,7 +38,6 @@ export class AlunoController {
       }
     });
 
-    console.log(aluno);
 
     res.render("alunos/detalhes_alunos", { aluno });
   }
@@ -48,7 +47,6 @@ export class AlunoController {
       raw: true,
       include: { model: Curso, attributes: ["nome"], required: true },
     });
-    console.log(turma);
     res.render("alunos/form_aluno", { turma });
   }
 
@@ -71,7 +69,6 @@ export class AlunoController {
       TurmaId,
     };
 
-    // console.log(aluno);
     const turma = await Turma.findAll({
       raw: true,
       include: { model: Curso, attributes: ["nome"], required: true },
@@ -89,15 +86,13 @@ export class AlunoController {
 
     let status = false;
     let mensagem = "";
-    // console.log(turmaCount);
-    // console.log(turma.qtd_max);
+
 
     if (turmaLimite.qtd_max == turmaCount) {
       status = true;
       mensagem = "Limite da Turma excedido";
       res.render("alunos/form_aluno", { status, mensagem, turma });
     } else if (buscaAluno > 0) {
-      console.log(buscaAluno);
       status = true;
       mensagem = "Aluno já cadastrado no curso";
       res.render("alunos/form_aluno", { status, mensagem, turma });
@@ -123,8 +118,7 @@ export class AlunoController {
     });
 
     let filterTurma = turma.filter((array) => array.id != aluno.TurmaId);
-    console.log(aluno);
-    console.log(filterTurma);
+    
 
     res.render("alunos/formUpdate_aluno", { aluno, filterTurma });
   }
@@ -158,9 +152,6 @@ export class AlunoController {
     const texto = req.body.texto;
     const campo = req.body.busca;
 
-    // console.log(texto)
-
-    // console.log(campo);
 
     if (campo == "nome") {
       const alunos = await Aluno.findAll({ raw: true, where: { nome: texto } });
@@ -177,7 +168,6 @@ export class AlunoController {
         });
       });
 
-    //   console.log(alunos);
 
       res.render("alunos/busca", { alunos });
     } else if (campo == "id") {
@@ -195,7 +185,6 @@ export class AlunoController {
         });
       });
 
-    //   console.log(alunos);
       res.render("alunos/busca", { alunos });
     }
   }

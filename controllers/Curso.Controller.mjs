@@ -6,7 +6,6 @@ export class CursoController{
 
         const cursos = await Curso.findAll({raw:true});
         let status;
-        console.log(cursos.length);
         if(cursos.length==0){
             status = false
         }else{
@@ -24,11 +23,9 @@ export class CursoController{
         const nome = req.body.nome.toLowerCase();
         const descricao = req.body.descricao;
 
-        console.log(`${nome}, ${descricao}`);
 
         const registros = await Curso.count({raw: true, where: {nome:nome}});
 
-        // console.log(registros);
 
         if(registros==0){
             const curso = {
@@ -47,10 +44,7 @@ export class CursoController{
 
     static async formAltera_curso(req,res){
         const id = req.params.id;
-        // console.log(id);
         const curso = await Curso.findOne({raw: true, where:{id:id}});
-
-        // console.log(curso)
 
         res.render('cursos/formAltera_curso', {curso});
     }
@@ -74,8 +68,6 @@ export class CursoController{
         const id = req.params.id;
 
         const curso = await Curso.findOne({raw: true, where:{id:id}});
-
-        // console.log(curso);
 
         res.render('cursos/curso_warn', {curso});
 
