@@ -84,4 +84,4 @@ O projeto utiliza **Bootstrap** para garantir uma interface simples e responsiva
 
 ---
 
-
+![Screenshot_1](https://github.com/user-attachments/assets/57efcb91-aff4-45c6-90d8-bda45c4a2d1e)
